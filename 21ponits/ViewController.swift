@@ -1,0 +1,19 @@
+//
+//  ViewController.swift
+//  21ponits
+//
+//  Created by 翁燮羽 on 2021/1/30.
+//
+
+import UIKit
+
+class ViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+    }
+
+
+}
+
