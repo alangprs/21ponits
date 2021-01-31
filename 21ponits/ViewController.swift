@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     var sum3 = 0
     var sum4 = 0
     var sum5 = 0
+    var computerSum = [0,0,0,0,0]
     var points = 0 //存加總之後的點數
     var rankNumber = 0 //存將rank轉成數字得值
     var card = Card()
@@ -58,24 +59,24 @@ class ViewController: UIViewController {
         switch 存要牌次數 {
         case 1:
             computerCards[0].image = UIImage(named: computerFirstCard!.Cube+computerFirstCard!.Rank) //顯示電腦第一張的牌
-             sum1 = judgeRankFuncs
+            computerSum[0] = judgeRankFuncs //存得到的牌數字方便加總
         case 2:
             computerCards[1].image = UIImage(named: computerFirstCard!.Cube+computerFirstCard!.Rank)
-             sum2 = judgeRankFuncs
+            computerSum[1] = judgeRankFuncs
         case 3:
             computerCards[2].image = UIImage(named: computerFirstCard!.Cube+computerFirstCard!.Rank)
-             sum3 = judgeRankFuncs
+            computerSum[2] = judgeRankFuncs
         case 4:
             computerCards[3].image = UIImage(named: computerFirstCard!.Cube+computerFirstCard!.Rank)
-             sum4 = judgeRankFuncs
+            computerSum[3] = judgeRankFuncs
         case 5:
             computerCards[4].image = UIImage(named: computerFirstCard!.Cube+computerFirstCard!.Rank)
-             sum5 = judgeRankFuncs
+            computerSum[4] = judgeRankFuncs
         default:
             break
         }
-        //計算牌點數 將每次得到牌的點數存入sum1~4 相加起來
-        points = sum1+sum2+sum3+sum4+sum5
+        //計算牌點數 將每次得到牌的點數存入0~4 相加起來
+        points = computerSum[0]+computerSum[1]+computerSum[2]+computerSum[3]+computerSum[4]
         totalNumber.text = "目前點數 \(points) 點"
         
         
@@ -106,11 +107,7 @@ class ViewController: UIViewController {
         totalNumber.text = ""
         存要牌次數 = 0
         cards.shuffle()
-        sum1 = 0
-        sum2 = 0
-        sum3 = 0
-        sum4 = 0
-        sum5 = 0
+        computerSum = [0,0,0,0,0]
         takeCardsButtonAlpha.alpha = 1 //將要牌button顯示出來
     }
     
